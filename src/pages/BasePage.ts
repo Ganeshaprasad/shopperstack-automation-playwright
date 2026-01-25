@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import config from "../config/config.json";
 
 export class BasePage {
     protected readonly page: Page;
@@ -11,6 +12,6 @@ export class BasePage {
      * Enter the application URL
      */
     public async open(): Promise<void> {
-        await this.page.goto("https://www.shoppersstack.com/user-signin");
+        await this.page.goto(config.url);
     }
 }
